@@ -41,13 +41,22 @@ document.addEventListener("keypress", function(e) {
     if(e.key == 'ArrowLeft'){keyA=true}
     if(e.key == 'ArrowDown'){keyS=true}
     if(e.key == 'ArrowRight'){keyD=true}
-    
+
+    if(keyW=true){
+	click_sound.play()
+	console.log("Pressed up arrow")
+    if(keyA=true){
+	click_sound.play()
+	console.log("Pressed left arrow")
+    if(keyS=true){
+	click_sound.play()
+	console.log("Pressed down arrow")
+    if(keyD=true){
+	click_sound.play()
+	console.log("Pressed right arrow")
+    }
 });
 
-while (keyW=true){
-	click_sound.play()
-  console.log("pressed key amoog")
-}
 
 </script>
 
