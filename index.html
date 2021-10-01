@@ -38,6 +38,20 @@ var tutorial = document.getElementById('tutorial')
 var settings = document.getElementById('settings')
 var quit = document.getElementById('quit')
 
+window.onload = function() {
+	var element = document.querySelector("#container");
+
+	element.requestFullscreen()
+	.then(function() {
+		// element has entered fullscreen mode successfully
+	})
+	.catch(function(error) {
+		// element could not enter fullscreen mode
+		// error message
+		console.log(error.message);
+	});
+}
+
 function doWhichKey(e) { 
   e = e || window.event; 
   let charCode = e.keyCode || e.which; 
