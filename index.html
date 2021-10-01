@@ -14,6 +14,32 @@ test
   position: absolute;
 }
 
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+	
 .settings_menu {
   left: 50%;
   top: 50%;
@@ -53,6 +79,7 @@ background-color: #121212;
 <img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_quit.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
 <div class="settings_menu" id="settings_menu" style="display:none;">
+<button class="close" id="settings_close"></button>
 <center><header>SETTINGS MENU</header></center>
 </div>
 <script>
@@ -65,15 +92,12 @@ var tutorial = document.getElementById('tutorial')
 var settings = document.getElementById('settings')
 var quit = document.getElementById('quit')
 var settings_menu = document.getElementById('settings_menu')
+var settings_quit = document.getElementById('settings_close')
 
 
-
-
-function doWhichKey(e) { 
-  e = e || window.event; 
-  let charCode = e.keyCode || e.which; 
-  return String.fromCharCode(charCode); 
-} 
+settings_quit.addEventListener("click", function(e){
+	settings_menu.style.display = 'none';
+}
 
 document.addEventListener("keydown", function(e){
 	console.log("pressed key")
