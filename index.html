@@ -13,6 +13,24 @@ test
   bottom:0px;
   left:0px;
 }
+	
+.parent {
+height: 200px;
+background: #CCCCCC;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.child {
+background-color: #FFFF00;
+width: 100px;
+height: 100px;
+}
+
+body {
+background-color: rgba(0, 0, 0, 0.75);
+}
+	
 </style>
 </head>
 <body class="fingerCursor" data-new-gr-c-s-check-loaded="14.1031.0" data-gr-ext-installed="">
@@ -28,15 +46,19 @@ test
 <div class="screen" id="quit" style="display:none;">
 <img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_quit.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
+<div class="parent" id="settings_menu" style="display:none;">
+<div class="child"><center><p7>Settings menu idk</p></center></div>
+</div>
 <script>
 var click_sound = new Audio('Click - Sound Effect (HD).mp3');
 var keypressed = 0
-var keyW=false, keyA=false, keyS=false,keyD=false
+var keyW=false, keyA=false, keyS=false,keyD=false, select=false
 var menu_counter = 1
 var play = document.getElementById('play')
 var tutorial = document.getElementById('tutorial')
 var settings = document.getElementById('settings')
 var quit = document.getElementById('quit')
+var settings_menu = document.getElementById('settings_menu')
 
 window.onload = function() {
 	var element = document.querySelector("#container");
@@ -62,7 +84,7 @@ document.addEventListener("keydown", function(e) {
 	console.log("pressed key")
   console.log(e.KeyCode)
   
-  if(e.key == " " || e.key == "Enter"){/*select that option*/}
+  if(e.key == "Enter"){select=true}
   if(e.key == 'ArrowUp'){keyW=true}
   if(e.key == 'ArrowLeft'){keyA=true}
   if(e.key == 'ArrowDown'){keyS=true}
@@ -129,8 +151,20 @@ document.addEventListener("keydown", function(e) {
 	  settings.style.display = 'none';
 	  quit.style.display = 'inline';
   }
+  if(select==true){
+	 if(menu_counter==1){
+		 window.location.replace("https://fightingox1.github.io/Amazing-Math/")
+	 }
+	 if(menu_counter==2){
+		window.location.replace("https://fightingox1.github.io/game-loading-screen-test/tutorial.html")
+	 }
+	if(menu_counter==3){
+		settings_menu.style.display = 'inline';
+	}
+	if(menu_counter==4){
+		window.close()
+	}
 });
-
 
 </script>
 
