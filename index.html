@@ -95,6 +95,13 @@ var quit = document.getElementById('quit')
 var settings_menu = document.getElementById('settings_menu')
 var settings_quit = document.getElementById('settings_close')
 
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
 
 function settings_close(){
 	settings_menu.style.display = 'none';
@@ -105,7 +112,8 @@ document.addEventListener("keydown", function(e){
   console.log(e.KeyCode)
   
   if(e.key == "Enter"){
-    select_sound.play()	  
+    select_sound.play()
+    sleep(13)
     select=true
   }
   if(e.key == 'ArrowUp'){keyW=true}
