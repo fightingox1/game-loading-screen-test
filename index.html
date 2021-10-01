@@ -79,7 +79,7 @@ background-color: #121212;
 <img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_quit.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
 <div class="settings_menu" id="settings_menu" style="display:none;">
-<button class="close" id="settings_close"></button>
+<button class="close" id="settings_close" onclick=""settings_close()></button>
 <center><header>SETTINGS MENU</header></center>
 </div>
 <script>
@@ -95,7 +95,7 @@ var settings_menu = document.getElementById('settings_menu')
 var settings_quit = document.getElementById('settings_close')
 
 
-settings_quit.addEventListener("click", function(e){
+function settings_close(){
 	settings_menu.style.display = 'none';
 }
 
