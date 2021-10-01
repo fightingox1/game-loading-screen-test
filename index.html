@@ -83,7 +83,8 @@ background-color: #121212;
 <center><header>SETTINGS MENU</header></center>
 </div>
 <script>
-var click_sound = new Audio('Click - Sound Effect (HD).mp3');
+var click_sound = new Audio('Click_Sound.mp3');
+var select_sound = new Audio('Select_Sound.mp3');
 var keypressed = 0
 var keyW=false, keyA=false, keyS=false,keyD=false, select=false
 var menu_counter = 1
@@ -103,7 +104,10 @@ document.addEventListener("keydown", function(e){
 	console.log("pressed key")
   console.log(e.KeyCode)
   
-  if(e.key == "Enter"){select=true}
+  if(e.key == "Enter"){
+    select_sound.play()	  
+    select=true
+  }
   if(e.key == 'ArrowUp'){keyW=true}
   if(e.key == 'ArrowLeft'){keyA=true}
   if(e.key == 'ArrowDown'){keyS=true}
