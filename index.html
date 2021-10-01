@@ -1,4 +1,3 @@
-
 <html><head>
 <title>
 test
@@ -47,7 +46,7 @@ background-color: rgba(0, 0, 0, 0.75);
 <img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_quit.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
 <div class="parent" id="settings_menu" style="display:none;">
-<div class="child"><center><p7>Settings menu idk</p></center></div>
+<div class="child"><center><p7>Settings menu idk</p7></center></div>
 </div>
 <script>
 var click_sound = new Audio('Click - Sound Effect (HD).mp3');
@@ -60,19 +59,8 @@ var settings = document.getElementById('settings')
 var quit = document.getElementById('quit')
 var settings_menu = document.getElementById('settings_menu')
 
-window.onload = function() {
-	var element = document.querySelector("#container");
 
-	element.requestFullscreen()
-	.then(function() {
-		// element has entered fullscreen mode successfully
-	})
-	.catch(function(error) {
-		// element could not enter fullscreen mode
-		// error message
-		console.log(error.message);
-	});
-}
+
 
 function doWhichKey(e) { 
   e = e || window.event; 
@@ -80,7 +68,7 @@ function doWhichKey(e) {
   return String.fromCharCode(charCode); 
 } 
 
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown", function(e){
 	console.log("pressed key")
   console.log(e.KeyCode)
   
@@ -154,18 +142,24 @@ document.addEventListener("keydown", function(e) {
   if(select==true){
 	 if(menu_counter==1){
 		 window.location.replace("https://fightingox1.github.io/Amazing-Math/")
+     select==false
 	 }
 	 if(menu_counter==2){
 		window.location.replace("https://fightingox1.github.io/game-loading-screen-test/tutorial.html")
+    select=false
 	 }
 	if(menu_counter==3){
 		settings_menu.style.display = 'inline';
+    select=false
 	}
 	if(menu_counter==4){
-		window.close()
+		console.log("quit")
+    select=false
 	}
+}
 });
+
 
 </script>
 
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+</body></html>
