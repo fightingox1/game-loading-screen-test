@@ -1,3 +1,4 @@
+
 <html><head>
 <title>
 test
@@ -23,6 +24,7 @@ test
 const click_sound = new Audio('game-loading-screen-test/Click - Sound Effect (HD).mp3');
 var keypressed = 0
 var keyW=false, keyA=false, keyS=false,keyD=false
+var menu_counter = 1
 
 function doWhichKey(e) { 
   e = e || window.event; 
@@ -30,35 +32,52 @@ function doWhichKey(e) {
   return String.fromCharCode(charCode); 
 } 
 
-document.addEventListener("keypress", function(e) {
+document.addEventListener("keydown", function(e) {
 	console.log("pressed key")
-  console.log(event.KeyCode)
-  console.log("You pressed " + doWhichKey(e));
-  keypressed=  doWhichKey(event);
+  console.log(e.KeyCode)
   
-    if(e.key == " " || e.key == "Enter"){/select that option/}
-    if(e.key == 'ArrowUp'){keyW=true}
-    if(e.key == 'ArrowLeft'){keyA=true}
-    if(e.key == 'ArrowDown'){keyS=true}
-    if(e.key == 'ArrowRight'){keyD=true}
+  if(e.key == " " || e.key == "Enter"){/*select that option*/}
+  if(e.key == 'ArrowUp'){keyW=true}
+  if(e.key == 'ArrowLeft'){keyA=true}
+  if(e.key == 'ArrowDown'){keyS=true}
+  if(e.key == 'ArrowRight'){keyD=true}
+		
+ 	console.log(keyW)
+  console.log(keyA)
+  console.log(keyS)
+  console.log(keyD)
 
-    if(keyW=true){
-	click_sound.play();
-	console.log("Pressed up arrow")
-}
-    if(keyA=true){
-	click_sound.play();
-	console.log("Pressed left arrow")
-}
-    if(keyS=true){
-	click_sound.play();
-	console.log("Pressed down arrow")
-}
-    if(keyD=true){
-	click_sound.play();
-	console.log("Pressed right arrow")
-}
-    }
+  if(keyW==true){
+		click_sound.play();
+		console.log("Pressed up arrow")
+    keyW=false
+    menu_counter = menu_counter - 1
+	}
+  if(keyA==true){
+		click_sound.play();
+		console.log("Pressed left arrow")
+    keyA=false
+    menu_counter = menu_counter - 1
+	}
+  if(keyS==true){
+		click_sound.play();
+		console.log("Pressed down arrow")
+    keyS=false
+    menu_counter = menu_counter + 1
+	}
+  if(keyD==true){
+		click_sound.play();
+		console.log("Pressed right arrow")
+    keyD=false
+    menu_counter = menu_counter + 1
+	}
+  if(menu_counter > 4){
+  menu_counter = 1
+  }
+  if(menu_counter < 1){
+  menu_counter = 4
+  }
+  console.log(menu_counter)
 });
 
 
