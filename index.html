@@ -16,14 +16,27 @@ test
 </style>
 </head>
 <body class="fingerCursor" data-new-gr-c-s-check-loaded="14.1031.0" data-gr-ext-installed="">
-<div class="screen">
+<div class="screen" id="play" style="display:inline;">
 <img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_play.PNG" style="height: 100%; width: 100%; object-fit: contain">
+</div>
+<div class="screen" id="tutorial" style="display:none;">
+<img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_tutorial.PNG" style="height: 100%; width: 100%; object-fit: contain">
+</div>
+<div class="screen" id="settings" style="display:none;">
+<img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_settings.PNG" style="height: 100%; width: 100%; object-fit: contain">
+</div>
+<div class="screen" id="quit" style="display:none;">
+<img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_quit.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
 <script>
 var click_sound = new Audio('Click - Sound Effect (HD).mp3');
 var keypressed = 0
 var keyW=false, keyA=false, keyS=false,keyD=false
 var menu_counter = 1
+var play = document.getElementById('play')
+var tutorial = document.getElementById('tutorial')
+var settings = document.getElementById('settings')
+var quit = document.getElementById('quit')
 
 function doWhichKey(e) { 
   e = e || window.event; 
@@ -77,6 +90,31 @@ document.addEventListener("keydown", function(e) {
   menu_counter = 4
   }
   console.log(menu_counter)
+  
+  if(menu_counter==1){
+	  play.style.display = 'inline';
+	  tutorial.style.display = 'none';
+	  settings.style.display = 'none';
+	  quit.style.display = 'none';
+  }
+  if(menu_counter==2){
+	  play.style.display = 'none';
+	  tutorial.style.display = 'inline';
+	  settings.style.display = 'none';
+	  quit.style.display = 'none';
+  }
+  if(menu_counter==3){
+	  play.style.display = 'none';
+	  tutorial.style.display = 'none';
+	  settings.style.display = 'inline';
+	  quit.style.display = 'none';
+  }
+  if(menu_counter==4){
+	  play.style.display = 'none';
+	  tutorial.style.display = 'none';
+	  settings.style.display = 'none';
+	  quit.style.display = 'inline';
+  }
 });
 
 
