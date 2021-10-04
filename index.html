@@ -30,18 +30,11 @@ header{
   position: absolute;
   text-align: center;
 }
-iframe{
-width: 100%;
-height: 100%;
-top:0;
-left:0;
-position: absolute;
-}
+
   </style>
   <title>GAME NAME</title>
   </head>
   <body>
-    <iframe src="home.html" style="display:none;" id="home_screen"></iframe>
     <div class="settings_menu" id="settings_menu" style="display:inline;">
     <center><header>GAME NAME</header></center>
       <center><button onclick="start_button()">Start</button></center>
@@ -77,8 +70,7 @@ position: absolute;
     
     function start_button(){
       go_full_screen()
-      start.style.display = 'none';
-      home_screen.style.display = 'inline';
+      window.location.replace("home.html")
     }
     </script>
   </body>
