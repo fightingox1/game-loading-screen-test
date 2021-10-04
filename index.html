@@ -36,36 +36,29 @@ header{
   <body>
     <div class="settings_menu" id="settings_menu">
     <center><header>GAME NAME</header></center>
-      <center><button onclick="toggleFullScreen(); load_home()'">Start</button></center>
+      <center><button onclick="start_button()">Start</button></center>
       <div>
         <center><h4 style="color: #AFAAA9; font-family: Arial, Helvetica, sans-serif;"> Welcome to [GAME NAME] this game was developed by Tyler Spruill, Gregory Wells, and Logan Sulivan. Story by Harrison. This game was made [DATE] to participate in Replits october 2021 kajam! In order to begin the game press the start button locaed above. Upon pressing the start button you will find yourself in the games home screen, in which you can begin the game, begin the tutorial, customize your settings, or just quit the game. Thank you for checking out our game!</h4></center>
       <span>MADE BY SOMETHING STUDIOS</span>
       </div>
     </div>
-    <script>
-      function toggleFullScreen() {
-  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
-   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-    if (document.documentElement.requestFullScreen) {  
-      document.documentElement.requestFullScreen();  
-    } else if (document.documentElement.mozRequestFullScreen) {  
-      document.documentElement.mozRequestFullScreen();  
-    } else if (document.documentElement.webkitRequestFullScreen) {  
-      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
-    }  
-  } else {  
-    if (document.cancelFullScreen) {  
-      document.cancelFullScreen();  
-    } else if (document.mozCancelFullScreen) {  
-      document.mozCancelFullScreen();  
-    } else if (document.webkitCancelFullScreen) {  
-      document.webkitCancelFullScreen();  
-    }  
-  }  
+  <script>
+    function go_full_screen(){
+    var elem = document.documentElement;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    }
 }
-function load_home(){
-  window.location.replace("home.html")
-}
+    function start_button(){
+      go_full_screen()
+      window.location.replace("home.html")
+    }
     </script>
   </body>
 </html>
