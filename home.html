@@ -68,19 +68,19 @@ background-color: #121212;
 <body>
 <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
 <audio loop autoplay>
-  <source src="https://fightingox1.github.io/game-loading-screen-test/Background_music.mp3" type="audio/mpeg">
+  <source src="Background_music.mp3" type="audio/mpeg">
 </audio>
 <div class="screen" id="play" style="display:inline;">
-<img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_play.PNG" style="height: 100%; width: 100%; object-fit: contain">
+<img src="Gameloading_play.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
 <div class="screen" id="tutorial" style="display:none;">
-<img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_tutorial.PNG" style="height: 100%; width: 100%; object-fit: contain">
+<img src="Gameloading_tutorial.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
 <div class="screen" id="settings" style="display:none;">
-<img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_settings.PNG" style="height: 100%; width: 100%; object-fit: contain">
+<img src="Gameloading_settings.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
 <div class="screen" id="quit" style="display:none;">
-<img src="https://fightingox1.github.io/game-loading-screen-test/Gameloading_quit.PNG" style="height: 100%; width: 100%; object-fit: contain">
+<img src="Gameloading_quit.PNG" style="height: 100%; width: 100%; object-fit: contain">
 </div>
 <div class="settings_menu" id="settings_menu" style="display:none;">
 <a href="#" class="close" onclick="settings_close()"></a>
@@ -181,11 +181,11 @@ document.addEventListener("keydown", function(e){
   }
   if(select==true){
 	 if(menu_counter==1){
-		 window.location.replace("https://fightingox1.github.io/game-loading-screen-test/game.html")
+		 window.location.replace("game.html")
      select==false
 	 }
 	 if(menu_counter==2){
-		window.location.replace("https://fightingox1.github.io/game-loading-screen-test/tutorial.html")
+		window.location.replace("tutorial.html")
     select=false
 	 }
 	if(menu_counter==3){
