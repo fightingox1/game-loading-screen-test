@@ -125,7 +125,9 @@ var settings_quit = document.getElementById('settings_close')
     }
 }
 
-go_full_screen()	
+window.onload = function() {
+  go_full_screen()
+};	
 
 function settings_close(){
 	click_sound.play()
