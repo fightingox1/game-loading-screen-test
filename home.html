@@ -80,9 +80,6 @@ background-color: #121212;
 </style>
 </head>
 <body>
-<div id="cover" class="cover">
-	<div id="center"><center><img src="loading.gif"></center></div>	
-</div>
 <audio loop autoplay>
   <source src="Background_music.mp3" type="audio/mpeg">
 </audio>
@@ -114,11 +111,7 @@ var settings = document.getElementById('settings')
 var quit = document.getElementById('quit')
 var settings_menu = document.getElementById('settings_menu')
 var settings_quit = document.getElementById('settings_close')
-var loading = document.getElementById('cover')
 
-$(window).on('load', function() {
-   cover.style.display = 'none';
-});
 
 function settings_close(){
 	click_sound.play()
