@@ -13,7 +13,15 @@ test
   left:0px;
   position: absolute;
 }
-#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #000; z-index:9999;}
+.cover {
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   top:0;
+   left: 0;
+   background: #000;
+   z-index:9999;
+}
 
 .close {
   position: absolute;
@@ -72,8 +80,8 @@ background-color: #121212;
 </style>
 </head>
 <body>
-<div id="cover">
-<div id="center"><img src="loading.gif"></div>	
+<div id="cover" class="cover">
+	<div id="center"><center><img src="loading.gif"></center></div>	
 </div>
 <audio loop autoplay>
   <source src="Background_music.mp3" type="audio/mpeg">
@@ -106,9 +114,10 @@ var settings = document.getElementById('settings')
 var quit = document.getElementById('quit')
 var settings_menu = document.getElementById('settings_menu')
 var settings_quit = document.getElementById('settings_close')
+var loading = document.getElementById('cover')
 
 $(window).on('load', function() {
-   $("#cover").hide();
+   cover.style.display = 'none';
 });
 
 function settings_close(){
