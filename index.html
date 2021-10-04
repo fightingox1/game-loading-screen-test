@@ -111,7 +111,6 @@ document.addEventListener("keydown", function(e){
   console.log(e.KeyCode)
   
   if(e.key == "Enter"){
-    select_sound.play()
     select=true
   }
   if(e.key == 'ArrowUp'){keyW=true}
@@ -190,10 +189,12 @@ document.addEventListener("keydown", function(e){
     select=false
 	 }
 	if(menu_counter==3){
+		select_sound.play()
 		settings_menu.style.display = 'inline';
     select=false
 	}
 	if(menu_counter==4){
+		select_sound.play()
 		console.log("quit")
 		window.close()
     select=false
